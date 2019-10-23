@@ -16,6 +16,7 @@ Then create certificates:
 mkdir -p /etc/sshmailer
 openssl genrsa -out /etc/sshmailer/sshmailer.pem 1024
 openssl rsa -in /etc/sshmailer/sshmailer.pem -out /etc/sshmailer/sshmailer.pub -pubout
+chmod 440 /etc/sshmailer/sshmailer.*
 ```
 
 And copy the public part of the cert *(without the `--- BEGIN ---` parts)* into your DNS TXT record, which should look something like:
